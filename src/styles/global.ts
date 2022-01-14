@@ -30,6 +30,7 @@ export const GlobalStyle = createGlobalStyle`
         font-family: 'Poppins', sans-serif;
         font-family: 'Saira Stencil One', cursive;
         color: var(--text);
+        padding-bottom: 2rem;
     }
 
     h1, h2, h3, h4, h5, h6{
@@ -39,6 +40,8 @@ export const GlobalStyle = createGlobalStyle`
 
     button {
         cursor: pointer;
+        font-family: 'Poppins', sans-serif;
+        font-family: 'Saira Stencil One', cursive;
     }
 
     [disabled] {
