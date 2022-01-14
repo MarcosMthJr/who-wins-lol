@@ -1,9 +1,12 @@
+import { Header } from "./components/Header";
+import { Main } from "./components/Main";
 import { GlobalStyle } from "./styles/global";
 
 function App() {
   return (
     <>
-      <p>so let's try</p>
+      <Header />
+      <Main />
       <GlobalStyle />
     </>
   );
