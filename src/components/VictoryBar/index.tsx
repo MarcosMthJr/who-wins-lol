@@ -1,21 +1,21 @@
 import { Container, VerticalBar, VerticalRow, WinText } from "./style";
 
-export function VictoryBar() {
+export function VictoryBar(){
     return (
         <Container>
-            <WinText>
+            <WinText fighterPosition="left">
                 Win
             </WinText>
-            <VerticalRow>
-                <VerticalBar />
+            <VerticalRow fighterPosition="left">
+                <VerticalBar fighterPosition="left" barHeight={8}/>
             </VerticalRow>
 
             <span>Vs</span>
 
-            <VerticalRow>
-                <VerticalBar />
+            <VerticalRow fighterPosition="right">
+                <VerticalBar fighterPosition="right" barHeight={2}/>
             </VerticalRow>
-            <WinText>
+            <WinText fighterPosition="right">
                 Win
             </WinText>
         </Container>

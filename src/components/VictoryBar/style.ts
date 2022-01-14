@@ -1,5 +1,8 @@
 import styled from 'styled-components';
-
+const colors =  {
+    purple: '#8D4D89',
+    blue: '#4F55BF'
+}
 export const Container = styled.section`
 
     width: 100%;
@@ -17,32 +20,44 @@ export const Container = styled.section`
 `;
 
 //TODO: cor da linha vertical
-//[ ] mudar a cor com as props
+//[x] mudar a cor com as props
 
-export const VerticalRow =  styled.div`
+interface VerticalRowProps {
+    fighterPosition: 'left' | 'right';
+}
+export const VerticalRow =  styled.div<VerticalRowProps>`
     width: 1px;
-    border: 1px solid white;
+    border: 1px solid ${(props)=> props.fighterPosition === 'left' ? colors.purple : colors.blue };
     height:10rem;
     position: relative;
 `;
 
 
 // TODO: cor da barra vertical, orientação da barra e tamanho da barra
-// [ ] pegar das props se é bottom: 0; ou top: 0;
-// [ ] mudar o heigth conforme os votos
-// [ ] mudar a cor com as props
+// [x] pegar das props se é bottom: 0; ou top: 0;
+// [x] mudar o heigth conforme os votos
+// [x] mudar a cor com as props
 
-export const VerticalBar = styled.div`
+interface VerticalBarProps {
+    fighterPosition: 'left' | 'right';
+    barHeight: number;
+}
+
+export const VerticalBar = styled.div<VerticalBarProps>`
 width: 2.5rem;
-height: 6rem;
+height: ${props => props.barHeight}rem;
 position: absolute;
 left: -20px;
-bottom: -1px;
-background: var(--purple);
+${(props)=> props.fighterPosition === 'left' ? 'bottom' : 'top' }: -1px;
+background: ${(props)=> props.fighterPosition === 'left' ? colors.purple : colors.blue };
 `;
 
-export const WinText = styled.p`
+
+interface WinTextProps {
+    fighterPosition: 'left' | 'right';
+}
+export const WinText = styled.p<WinTextProps>`
     font-size: 1.4rem;
-    color: var(--purple);
+    color: ${(props)=> props.fighterPosition === 'left' ? colors.purple : colors.blue };
     text-transform: uppercase;
 `;
